@@ -1,4 +1,9 @@
+/*      Course.java
+        Entity for the course
+        Author: Devon Daniels (217299822)
+        Date: 11 June 2021
 
+ */
 public class Course {
     private String courseName, courseSubjectList, courseDepartment;
 
