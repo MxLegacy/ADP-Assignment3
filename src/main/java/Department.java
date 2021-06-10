@@ -1,2 +1,2 @@
-public class Department {
+public interface Department {
 }

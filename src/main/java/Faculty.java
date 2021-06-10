@@ -1,2 +1,2 @@
-public class Faculty {
+public interface Faculty {
 }

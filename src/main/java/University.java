@@ -1,2 +1,2 @@
-public class University {
+public interface University {
 }
