@@ -1,24 +1,24 @@
 
 public class Course {
-    private String courseName, subjectList, department;
+    private String courseName, courseSubjectList, courseDepartment;
 
     private Course(Builder builder) {
         this.courseName = builder.courseName;
-        this.subjectList = builder.subjectList;
-        this.department = builder.department;
+        this.courseSubjectList = builder.courseSubjectList;
+        this.courseDepartment = builder.courseDepartment;
     }
 
     @Override
     public String toString() {
         return "Course{" +
                 "courseName='" + courseName + '\'' +
-                ", subjectList='" + subjectList + '\'' +
-                ", department='" + department + '\'' +
+                ", subjectList='" + courseSubjectList + '\'' +
+                ", department='" + courseDepartment + '\'' +
                 '}';
     }
 
     public static class Builder {
-        private String courseName, subjectList, department;
+        private String courseName, courseSubjectList, courseDepartment;
 
         public Builder setCourseName(String courseName) {
             this.courseName = courseName;
@@ -26,14 +26,14 @@ public class Course {
             return this;
         }
 
-        public Builder setSubjectList(String subjectList) {
-            this.subjectList = subjectList;
+        public Builder setSubjectList(String courseSubjectList) {
+            this.courseSubjectList = courseSubjectList;
 
             return this;
         }
 
-        public Builder setDepartment(String department) {
-            this.department = department;
+        public Builder setDepartment(String courseDepartment) {
+            this.courseDepartment = courseDepartment;
 
             return this;
         }
@@ -46,8 +46,8 @@ public class Course {
 
         public Builder copy(Course course) {
             this.courseName = course.courseName;
-            this.subjectList = course.subjectList;
-            this.department = course.department;
+            this.courseSubjectList = course.courseSubjectList;
+            this.courseDepartment = course.courseDepartment;
 
             return this;
         }
