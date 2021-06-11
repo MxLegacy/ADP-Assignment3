@@ -20,7 +20,11 @@ public class Student {
         this.department = builder.department;
     }
 
-    public static StudentBuilder bookAlertBuilder(Student copy){
+    public static StudentBuilder studentBuilder() {
+        return new StudentBuilder();
+    }
+
+    public static StudentBuilder studentBuilder(Student copy){
         StudentBuilder studentBuilder = new StudentBuilder();
         studentBuilder.studentName = copy.studentName;
         studentBuilder.studentNum = copy.studentNum;
