@@ -1,67 +1,71 @@
 package za.ac.cput.Entity;
 
+/*      AcademicStaff.java
+
+        Author: Tawfeeq Cupido (216266882)
+        Date: 8 June 2021
+
+ */
+
 public class AcademicStaff {
 
-    String name;
-    String position;
-    String department;
-    String course;
+    String ASname;
+    String ASposition;
+    String ASdepartment;
+    String AScourse;
 
-
-    AcademicStaff(String name, String position, String department, String
-            course) {
-        this.name = name;
-        this.position = position;
-        this.department = department;
-        this.course = course;
-
-
+    private AcademicStaff(AcademicStaff.ASBuilder builder) {
+        this.ASname = builder.ASname;
+        this.ASposition = builder.ASposition;
+        this.ASdepartment = builder.ASdepartment;
+        this.AScourse = builder.AScourse;
     }
 
-
+    @Override
     public String toString() {
-
-        return "Name = " + name + " \n Position = " + position + "\n za.ac.cput.Entity.Department = " + department + "" + "\n za.ac.cput.Entity.Course = " + course + "";
-
-
+        return "AcademicStaff: " +
+                "Name='" + ASname + '\'' +
+                ", Position='" + ASposition + '\'' +
+                ", Department='" + ASdepartment + '\'' +
+                ", Courses='" + AScourse + '\'' +
+                '}';
     }
 
+    public static class ASBuilder{
+        private String ASname, ASposition, ASdepartment, AScourse;
 
-    public static class AcademicStaffBuilder {
-
-        String name;
-        String position;
-        String department;
-        String course;
-
-        public AcademicStaffBuilder setName(String name) {
-            this.name = name;
+        public AcademicStaff.ASBuilder setASname(String ASname) {
+            this.ASname = ASname;
             return this;
         }
 
-        public AcademicStaffBuilder setPosition(String position) {
-            this.position = position;
+        public AcademicStaff.ASBuilder setASposition(String ASposition) {
+            this.ASposition = ASposition;
             return this;
         }
 
-        public AcademicStaffBuilder setDepartment(String department) {
-            this.department = department;
+        public AcademicStaff.ASBuilder setASdepartment(String ASdepartment) {
+            this.ASdepartment = ASdepartment;
             return this;
         }
 
-        public AcademicStaffBuilder setCourse(String course) {
-            this.course = course;
+        public AcademicStaff.ASBuilder setAScourse(String AScourse) {
+            this.AScourse = AScourse;
             return this;
         }
 
-        public AcademicStaff build() {
-            return new AcademicStaff( name, position, department, course);
+        //return constructed object
+        public AcademicStaff build(){
+            return new AcademicStaff(this);
         }
 
+        public ASBuilder copy(AcademicStaff AcademicStaff){
+            this.ASname = AcademicStaff.ASname;
+            this.ASposition = AcademicStaff.ASposition;
+            this.ASdepartment = AcademicStaff.ASdepartment;
+            this.AScourse = AcademicStaff.AScourse;
+            return this;
+        }
     }
-
-
-
-
 }
 
