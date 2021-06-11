@@ -1,7 +1,7 @@
 package za.ac.cput.Entity;
 
-/*      za.ac.cput.Entity.Course.java
-        za.ac.cput.Entity for the course
+/*      Course.java
+        Entity for the course
         Author: Devon Daniels (217299822)
         Date: 11 June 2021
 
