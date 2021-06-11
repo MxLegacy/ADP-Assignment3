@@ -1,8 +1,8 @@
 package za.ac.cput.Entity;
 /*
     Name : Umba joseph djamba
-    za.ac.cput.Entity.Student Number: 218292694
-    Description: za.ac.cput.Entity.Student za.ac.cput.Entity
+    Student Number: 218292694
+    Description: Student Entity
  */
 
 public class Student {
@@ -20,7 +20,11 @@ public class Student {
         this.department = builder.department;
     }
 
-    public static StudentBuilder bookAlertBuilder(Student copy){
+    public static StudentBuilder studentBuilder() {
+        return new StudentBuilder();
+    }
+
+    public static StudentBuilder studentBuilder(Student copy){
         StudentBuilder studentBuilder = new StudentBuilder();
         studentBuilder.studentName = copy.studentName;
         studentBuilder.studentNum = copy.studentNum;
