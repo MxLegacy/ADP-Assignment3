@@ -1,8 +1,15 @@
 package za.ac.cput.Entity;
 
+/*
+    Faculty.java
+    Entity for faculty
+    Author: Michael Alex Dirks (218306083)
+    Date: 11 June 2021
+*/
+
 public class Faculty {
 
-    String facultyName = "My za.ac.cput.Entity.Faculty";
+    String facultyName = "My Faculty";
     String[] departmentList = {"System Administration", "Application Development", "Multimedia", "Networking"};
 
     public Faculty(Faculty.Builder builder) {
@@ -20,7 +27,7 @@ public class Faculty {
             return this;
         }
 
-        public Faculty.Builder setDepartmentyList(String setDepartmentList){
+        public Faculty.Builder setDepartmentList(String setDepartmentList){
             this.departmentList = departmentList;
 
             return this;

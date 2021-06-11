@@ -1,5 +1,12 @@
 package za.ac.cput.Entity;
 
+/*
+    University.java
+    Entity for uiversity
+    Author: Michael Alex Dirks (218306083)
+    Date: 11 June 2021
+*/
+
 public class University {
 
     String universityName = "My za.ac.cput.Entity.University";
