@@ -1,5 +1,5 @@
 /* NonAcademicStaff.java
-   za.ac.cput.Entity for Non Academic Staff
+   Entity for Non Academic Staff
    Author: Tatum De Wet (218069227)
    Date: 9 June 2021
  */
@@ -14,12 +14,18 @@ public class NonAcademicStaff{
         this.NASdepartment = builder.NASdepartment;
     }
 
+    public void print(){
+        System.out.println("Student Number: " + NASname);
+        System.out.println("Student Name: " + NASposition);
+        System.out.println("Course: " + NASdepartment);
+    }
+
     @Override
     public String toString() {
         return "NonAcademicStaff: " +
                 "Name='" + NASname + '\'' +
                 ", Position='" + NASposition + '\'' +
-                ", za.ac.cput.Entity.Department='" + NASdepartment + '\'' +
+                ", Department='" + NASdepartment + '\'' +
                 '}';
     }
 
