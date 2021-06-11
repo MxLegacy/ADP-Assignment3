@@ -1,5 +1,7 @@
-/*      Course.java
-        Entity for the course
+package za.ac.cput.Entity;
+
+/*      za.ac.cput.Entity.Course.java
+        za.ac.cput.Entity for the course
         Author: Devon Daniels (217299822)
         Date: 11 June 2021
 
@@ -15,7 +17,7 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course{" +
+        return "za.ac.cput.Entity.Course{" +
                 "courseName='" + courseName + '\'' +
                 ", subjectList='" + courseSubjectList + '\'' +
                 ", department='" + courseDepartment + '\'' +

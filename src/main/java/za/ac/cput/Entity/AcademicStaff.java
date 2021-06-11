@@ -1,3 +1,5 @@
+package za.ac.cput.Entity;
+
 public class AcademicStaff {
 
     String name;
@@ -19,7 +21,7 @@ public class AcademicStaff {
 
     public String toString() {
 
-        return "Name = " + name + " \n Position = " + position + "\n Department = " + department + "" + "\n Course = " + course + "";
+        return "Name = " + name + " \n Position = " + position + "\n za.ac.cput.Entity.Department = " + department + "" + "\n za.ac.cput.Entity.Course = " + course + "";
 
 
     }

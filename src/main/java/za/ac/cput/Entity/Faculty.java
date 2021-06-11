@@ -1,6 +1,8 @@
+package za.ac.cput.Entity;
+
 public class Faculty {
 
-    String facultyName = "My Faculty";
+    String facultyName = "My za.ac.cput.Entity.Faculty";
     String[] departmentList = {"System Administration", "Application Development", "Multimedia", "Networking"};
 
     public Faculty(Faculty.Builder builder) {

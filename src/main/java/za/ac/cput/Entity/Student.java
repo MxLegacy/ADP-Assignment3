@@ -1,8 +1,8 @@
-
+package za.ac.cput.Entity;
 /*
     Name : Umba joseph djamba
-    Student Number: 218292694
-    Description: Student Entity
+    za.ac.cput.Entity.Student Number: 218292694
+    Description: za.ac.cput.Entity.Student za.ac.cput.Entity
  */
 
 public class Student {

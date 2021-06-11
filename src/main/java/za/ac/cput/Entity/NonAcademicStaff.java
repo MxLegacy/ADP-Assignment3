@@ -1,5 +1,5 @@
 /* NonAcademicStaff.java
-   Entity for Non Academic Staff
+   za.ac.cput.Entity for Non Academic Staff
    Author: Tatum De Wet (218069227)
    Date: 9 June 2021
  */
@@ -19,7 +19,7 @@ public class NonAcademicStaff{
         return "NonAcademicStaff: " +
                 "Name='" + NASname + '\'' +
                 ", Position='" + NASposition + '\'' +
-                ", Department='" + NASdepartment + '\'' +
+                ", za.ac.cput.Entity.Department='" + NASdepartment + '\'' +
                 '}';
     }
 

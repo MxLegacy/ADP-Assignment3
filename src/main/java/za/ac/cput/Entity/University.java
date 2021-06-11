@@ -1,8 +1,8 @@
-import java.util.Arrays;
+package za.ac.cput.Entity;
 
 public class University {
 
-    String universityName = "My University";
+    String universityName = "My za.ac.cput.Entity.University";
     String[] facultyList = {"IT", "Art", "Marketing"};
 
     public University(Builder builder) {
