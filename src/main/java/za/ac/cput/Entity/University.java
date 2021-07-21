@@ -7,7 +7,11 @@ package za.ac.cput.Entity;
     Date: 11 June 2021
 */
 
-public class University {
+import za.ac.cput.Repository.IRepository;
+
+public class University implements IRepository {
+
+
 
     String universityName = "My za.ac.cput.Entity.University";
     String[] facultyList = {"IT", "Art", "Marketing"};
@@ -15,6 +19,26 @@ public class University {
     public University(Builder builder) {
         this.universityName = builder.universityName;
         this.facultyList = builder.facultyList;
+    }
+
+    @Override
+    public Object create(Object o) {
+        return null;
+    }
+
+    @Override
+    public Object read(Object o) {
+        return null;
+    }
+
+    @Override
+    public Object update(Object o) {
+        return null;
+    }
+
+    @Override
+    public boolean delete(Object o) {
+        return false;
     }
 
     public static class Builder{
