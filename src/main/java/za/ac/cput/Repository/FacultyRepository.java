@@ -6,7 +6,7 @@ package za.ac.cput.Repository;
     Date: 25 July 2021
 */
 
-public interface IRepository<T, ID> {
+public interface FacultyRepository<T, ID> {
     String id = null;
 
     public T create(T t);

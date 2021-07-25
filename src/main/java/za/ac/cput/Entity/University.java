@@ -7,11 +7,9 @@ package za.ac.cput.Entity;
     Date: 11 June 2021
 */
 
-import za.ac.cput.Repository.IRepository;
+import za.ac.cput.Repository.UniversityRepository;
 
-public class University implements IRepository {
-
-
+public class University implements UniversityRepository {
 
     String universityName = "My za.ac.cput.Entity.University";
     String[] facultyList = {"IT", "Art", "Marketing"};

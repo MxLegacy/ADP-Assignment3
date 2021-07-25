@@ -1,13 +1,16 @@
 package za.ac.cput.Entity;
 
 /*
-    Faculty.java
     Entity for faculty
     Author: Michael Alex Dirks (218306083)
     Date: 11 June 2021
 */
 
-public class Faculty {
+import za.ac.cput.Repository.FacultyRepository;
+
+public class Faculty implements FacultyRepository {
+
+
 
     String facultyName = "My Faculty";
     String[] departmentList = {"System Administration", "Application Development", "Multimedia", "Networking"};
@@ -15,6 +18,26 @@ public class Faculty {
     public Faculty(Faculty.Builder builder) {
         this.facultyName = builder.facultyName;
         this.departmentList = builder.departmentList;
+    }
+
+    @Override
+    public Object create(Object o) {
+        return null;
+    }
+
+    @Override
+    public Object read(Object o) {
+        return null;
+    }
+
+    @Override
+    public Object update(Object o) {
+        return null;
+    }
+
+    @Override
+    public boolean delete(Object o) {
+        return false;
     }
 
     public static class Builder{
