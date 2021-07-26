@@ -1,11 +1,5 @@
 package za.ac.cput.Repository;
 
-/*
-    Entity for uiversity
-    Author: Michael Alex Dirks (218306083)
-    Date: 25 July 2021
-*/
-
 public interface IRepository<T, ID> {
     String id = null;
 
