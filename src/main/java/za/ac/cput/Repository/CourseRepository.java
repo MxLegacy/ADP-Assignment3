@@ -1,7 +1,7 @@
-/* NonAcademicStaff.java
-Repository for Non Academic Staff
-Author:
-Date: 25 July 2021
+/* CourseRepository.java
+Repository for Course
+Author:Devon Daniels
+Date: 26 July 2021
 */
 package za.ac.cput.Repository;
 
