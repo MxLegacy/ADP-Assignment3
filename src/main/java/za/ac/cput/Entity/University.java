@@ -7,9 +7,9 @@ package za.ac.cput.Entity;
     Date: 11 June 2021
 */
 
-import za.ac.cput.Repository.UniversityRepository;
+import za.ac.cput.Repository.IUniversityRepository;
 
-public class University implements UniversityRepository {
+public class University implements IUniversityRepository {
 
     String universityName = "My za.ac.cput.Entity.University";
     String[] facultyList = {"IT", "Art", "Marketing"};
