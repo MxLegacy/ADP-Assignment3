@@ -1,22 +1,44 @@
 package za.ac.cput.Repository;
 
-/*
-    Entity for uiversity
-    Author: Michael Alex Dirks (218306083)
-    Date: 25 July 2021
-*/
+import java.util.*;
+import za.ac.cput.Entity.University;
+
+public class UniversityRepository implements IUniversityRepository{
+
+    private static UniversityRepository repository = null;
+    private Set<University> universityDB = null;
+
+    private UniversityRepository(){
+        universityDB = new HashSet<University>();
+
+    }
+
+    public static UniversityRepository getRepository(){
+        if(repository == null){
+            repository = new UniversityRepository();
+        }
+        return repository;
+
+    }
 
 
-public interface UniversityRepository <T, ID> {
-    String id = null;
+    @Override
+    public Object create(Object o) {
+        return null;
+    }
 
-    public T create(T t);
+    @Override
+    public Object read(Object o) {
+        return null;
+    }
 
-    public T read(ID id);
+    @Override
+    public Object update(Object o) {
+        return null;
+    }
 
-    public T update(T t);
-
-    public boolean delete(ID id);
-
-
+    @Override
+    public boolean delete(Object o) {
+        return false;
+    }
 }

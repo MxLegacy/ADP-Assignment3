@@ -1,10 +1,10 @@
-package za.ac.cput.Repository;
+package za.ac.cput.Service;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class UniversityRepositoryTest {
+class iServiceTest {
 
     @Test
     void create() {
