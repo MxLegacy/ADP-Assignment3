@@ -1,8 +1,8 @@
 package za.ac.cput.Service;
 /*
-Repository for Academic Staff
+ Service for Academic Staff
  Author: Tawfeeq Cupido (216266882)
-Date: 1 August 2021
+ Date: 1 August 2021
 */
 
 import za.ac.cput.Entity.AcademicStaff;
