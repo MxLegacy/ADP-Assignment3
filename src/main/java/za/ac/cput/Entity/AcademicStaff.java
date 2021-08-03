@@ -22,7 +22,7 @@ public class AcademicStaff {
     }
 
     @Override
-    public String toString() {
+    public  String toString() {
         return "AcademicStaff: " +
                 "Name='" + ASname + '\'' +
                 ", Position='" + ASposition + '\'' +
