@@ -14,6 +14,22 @@ public class Department {
         this.deptCourseList = builder.deptCourseList;
         this.deptStaffType = builder.deptStaffType;
     }
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public String getDeptFaculty() {
+        return deptFaculty;
+    }
+
+    public String getDeptCourseList() {
+        return deptCourseList;
+    }
+
+    public String getDeptStaffType() {
+        return deptStaffType;
+    }
+
 
     @Override
     public String toString() {

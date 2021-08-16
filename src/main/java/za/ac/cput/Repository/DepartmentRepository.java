@@ -16,7 +16,7 @@ public class DepartmentRepository implements IDepartmentRepository {
         Deptdb = new HashSet<>();
     }
 
-    public static DepartmentRepository getRepo(){
+    public static DepartmentRepository getRepository(){
         if (Departmentreposit == null){
             Departmentreposit = new DepartmentRepository();
         }
@@ -25,10 +25,7 @@ public class DepartmentRepository implements IDepartmentRepository {
 
     @Override
     public Department create(Department department) {
-        boolean success = Deptdb.add(department);
-        if (!success){
-            return null;
-        }
+        this.Deptdb.add(department);
         return department;
     }
 
@@ -66,7 +63,7 @@ public class DepartmentRepository implements IDepartmentRepository {
 
     @Override
     public Set<Department> getAll() {
-        return null;
+        return Deptdb;
     }
 }
 
