@@ -6,12 +6,15 @@
 package za.ac.cput.factory;
 
 import za.ac.cput.Entity.NonAcademicStaff;
+import za.ac.cput.Util.GenericHelper;
 
 public class NonAcademicStaffFactory{
-    public static NonAcademicStaff createNonAcademicStaff(String NASname, String NASposition, String NASdepartment){
+    String NASid = GenericHelper.generateID();
+
+    public static NonAcademicStaff createNonAcademicStaff(String NASname, String NASposition, String NASdepartment, String NASid){
 
         NonAcademicStaff nonAcademicStaff = new NonAcademicStaff.NASBuilder()
-                .setNASname(NASname).setNASposition(NASposition).setNASdepartment(NASdepartment).build();
+                .setNASname(NASname).setNASposition(NASposition).setNASdepartment(NASdepartment).setNASid(NASid).build();
         return nonAcademicStaff;
     }
 }
