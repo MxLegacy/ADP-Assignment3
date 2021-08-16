@@ -8,11 +8,12 @@ package za.ac.cput.Repository;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.Entity.Course;
 import za.ac.cput.factory.CourseFactory;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class CourseRepositoryTest {
-    CourseRepository Coursereposit =  CourseRepository.getRepo();;
+    CourseRepository Coursereposit =  CourseRepository.getRepository();;
     Course course =  CourseFactory.buildCourse(" MTech: Information Technology", "Thesis (R5IT01R)", "Information Technology");
 
 
