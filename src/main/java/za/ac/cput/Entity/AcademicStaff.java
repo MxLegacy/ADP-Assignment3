@@ -31,6 +31,22 @@ public class AcademicStaff {
                 '}';
     }
 
+    public String getASname() {
+        return ASname;
+    }
+
+    public String getASposition() {
+        return ASposition;
+    }
+
+    public String getASdepartment() {
+        return ASdepartment;
+    }
+
+    public String getAScourse() {
+        return AScourse;
+    }
+
     public static class ASBuilder{
         private String ASname, ASposition, ASdepartment, AScourse;
 
