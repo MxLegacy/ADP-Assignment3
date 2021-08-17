@@ -14,6 +14,17 @@ public class Course {
         this.courseSubjectList = builder.courseSubjectList;
         this.courseDepartment = builder.courseDepartment;
     }
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public String getCourseSubjectList() {
+        return courseSubjectList;
+    }
+
+    public String getCourseDepartment() {
+        return courseDepartment;
+    }
 
     @Override
     public String toString() {

@@ -6,9 +6,6 @@ package za.ac.cput.Service;
  */
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.Entity.Course;
-
-import za.ac.cput.factory.CourseFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 

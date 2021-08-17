@@ -5,65 +5,50 @@ package za.ac.cput.Service;
         Date: 02 August 2021
  */
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.Entity.Department;
+import za.ac.cput.Repository.CourseRepository;
+import za.ac.cput.Repository.DepartmentRepository;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Service
 public class DepartmentService implements IDepartmentService{
-    private static DepartmentService DeptSer = null;
-    private Set<Department> DdB;
-    private DepartmentService(){
-        DdB = new HashSet<>();
+    private static DepartmentService departmentService;
+    private DepartmentRepository departmentRepository;
+
+    private DepartmentService() {
+        this.departmentRepository = DepartmentRepository.getRepository();
     }
 
 
 
 
     public static DepartmentService getService(){
-        if (DeptSer == null ) {
-            DeptSer = new DepartmentService();
+        if (departmentService == null ) {
+            departmentService = new DepartmentService();
         }
-        return DeptSer;
+        return departmentService;
     }
 
     public Department create(Department department){
-        boolean success = DdB.add(department);
-        if (!success){
-            return null;
-        }
-        return department;
-    }
+        return this.departmentRepository.create(department);}
+
 
     public Department read(String deptName){
 
-        for (Department d : DdB)
-            if (d.toString().equals(deptName)) {
-                return d;
-            }
-        return null;
+        return this.departmentRepository.read(deptName);
     }
 
     public Department update(Department department){
-        Department old = read(department.toString());
-        if (old != null) {
-            DdB.remove(old);
-            DdB.add(department);
-            return department;
-        }
-        return null;
+        return this.departmentRepository.update(department);
     }
 
     public boolean delete(String deptName){
-        Department Ddelete = read(deptName);
-        if (Ddelete == null)
-            return false;
-        DdB.remove(Ddelete);
-        return true;
+        return this.departmentRepository.delete(deptName);
     }
 
     public Set<Department> getAll() {
-        return null;
-    }
+        return this.departmentRepository.getAll();}
 }
 

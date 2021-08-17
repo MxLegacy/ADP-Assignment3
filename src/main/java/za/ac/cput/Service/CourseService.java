@@ -6,67 +6,57 @@ package za.ac.cput.Service;
  */
 
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.Entity.Course;
+import za.ac.cput.Repository.CourseRepository;
 
-
-import java.util.HashSet;
 import java.util.Set;
 
-public class CourseService implements ICourseService{
-    private static CourseService CourseSer = null;
-    private Set<Course> CSdB;
-    private CourseService(){
-        CSdB = new HashSet<>();
+@Service
+public class CourseService implements ICourseService {
+    private static CourseService courseService;
+    private CourseRepository courseRepository;
+
+    private CourseService() {
+        this.courseRepository = CourseRepository.getRepository();
     }
 
-
-
-
-    public static CourseService getService(){
-        if (CourseSer == null ) {
-            CourseSer = new CourseService();
+    public static CourseService getCourseService() {
+        if (courseService == null) {
+            courseService = new CourseService();
         }
-        return CourseSer;
+        return courseService;
     }
 
-    public Course create(Course course){
-        boolean success = CSdB.add(course);
-        if (!success){
-            return null;
-        }
-        return course;
+
+
+
+    public Course create(Course course) {
+
+        return this.courseRepository.create(course);
     }
 
-    public Course read(String courseName){
 
-            for (Course c : CSdB)
-                if (c.toString().equals(courseName)) {
-                    return c;
-                }
-            return null;
-        }
+    public Course read(String courseName) {
+        return this.courseRepository.read(courseName);
 
-    public Course update(Course course){
-        Course old = read(course.toString());
-        if (old != null) {
-            CSdB.remove(old);
-            CSdB.add(course);
-            return course;
-        }
-        return null;
     }
 
-    public boolean delete(String courseName){
-        Course Cdelete = read(courseName);
-        if (Cdelete == null)
-            return false;
-        CSdB.remove(Cdelete);
-        return true;
+    public Course update(Course course)
+    {return this.courseRepository.update(course);
     }
 
+    public boolean delete(String course) {
+        return this.courseRepository.delete(course);
+
+    }
+    @Override
     public Set<Course> getAll() {
-        return null;
+        return this.courseRepository.getAll();
+
     }
+
+
 }
 
 

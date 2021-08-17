@@ -8,65 +8,72 @@ package za.ac.cput.Repository;
 import za.ac.cput.Entity.Course;
 import java.util.*;
 
+
 public class CourseRepository implements ICourseRepository {
-    private static CourseRepository Coursereposit = null;
-    private Set<Course> Cdb;
+    private static CourseRepository repository = null;
+    private Set<Course> courseDB;
 
-    private CourseRepository(){
-        Cdb = new HashSet<>();
+
+    private CourseRepository() {
+        this.courseDB = new HashSet<>();
     }
 
-    public static CourseRepository getRepo(){
-        if (Coursereposit == null){
-            Coursereposit = new CourseRepository();
+    public static CourseRepository getRepository() {
+        if (repository == null) {
+            repository = new CourseRepository();
         }
-        return Coursereposit;
+        return repository;
     }
+
 
     @Override
     public Course create(Course course) {
-        boolean success = Cdb.add(course);
-        if (!success){
-            return null;
-        }
+        this.courseDB.add(course);
         return course;
     }
 
+
     @Override
     public Course read(String courseName) {
-        for (Course c : Cdb)
-            if (c.toString().equals(courseName)) {
+        for (Course c : courseDB)
+            if (c.getCourseName().equals(courseName)) {
                 return c;
             }
         return null;
     }
 
+
     @Override
     public Course update(Course course) {
-        Course old = read(course.toString());
-        if (old != null) {
-            Cdb.remove(old);
-            Cdb.add(course);
+        Course course1 = read(course.getCourseName());
+        if (course1 != null) {
+            courseDB.remove(course1);
+            courseDB.add(course);
             return course;
         }
         return null;
     }
 
-
-
-
     @Override
-    public boolean delete(String Coursename) {
-        Course Cdelete = read(Coursename);
-        if (Cdelete == null)
-            return false;
-        Cdb.remove(Cdelete);
-        return true;
+    public boolean delete(String s) {
+
+        return false;
     }
 
+
     @Override
+    public Course delete(Course course) {
+        Course deleteCourse = read(course.getCourseName());
+        if (deleteCourse == null) {
+
+            courseDB.remove(deleteCourse);
+            System.out.println("Course removed.");
+        }
+        return deleteCourse;
+    }
+
+
     public Set<Course> getAll() {
-        return null;
+        return courseDB;
     }
 }
-
