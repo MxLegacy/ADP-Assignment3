@@ -55,7 +55,7 @@ this.studentDB = new HashSet<>();}
     @Override
     public Student delete(Student student) {
         Student deletestudent = read(student.getStudentNum());
-        if (deleteCourse == null) {
+        if (deleteStudent == null) {
 
             studentDB.remove(deleteCourse);
             System.out.println("Student was removed.");
