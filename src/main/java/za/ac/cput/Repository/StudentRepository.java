@@ -10,7 +10,7 @@ import java.util.Set;
 
 import za.ac.cput.Entity.Student;
 
-public class StudentRepository implements IstudentRepository {
+public class StudentRepository implements IStudentRepository {
     public static StudentRepository repository = null; 
     private Set<Student> studentDB; 
 
@@ -62,6 +62,6 @@ this.studentDB = new HashSet<>();}
         }
         return deleteStudent;
     }
-    public Set <student> getAll() {return studentDB; }
+    public Set <Student> getAll() {return studentDB; }
 }
   
