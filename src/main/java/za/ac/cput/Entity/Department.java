@@ -8,6 +8,8 @@ package za.ac.cput.Entity;
 public class Department {
     private String deptName, deptFaculty, deptCourseList, deptStaffType;
 
+    private Department(){}
+
     private Department(Builder builder) {
         this.deptName = builder.deptName;
         this.deptFaculty = builder.deptFaculty;
