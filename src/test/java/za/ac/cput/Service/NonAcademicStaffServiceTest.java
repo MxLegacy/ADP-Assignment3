@@ -1,5 +1,10 @@
 package za.ac.cput.Service;
 
+/*
+NonAcademicStaffServiceTest.java
+Author: Tatum De Wet 218069227
+ */
+
 import org.junit.jupiter.api.Test;
 import za.ac.cput.Entity.NonAcademicStaff;
 import za.ac.cput.factory.NonAcademicStaffFactory;
@@ -17,6 +22,7 @@ public class NonAcademicStaffServiceTest {
         System.out.println("Create: " + create);
     }
 
+    @Test
     void testRead() {
         NonAcademicStaff read = NASservice.read(nonAcademicStaff.toString());
         assertNull(read);

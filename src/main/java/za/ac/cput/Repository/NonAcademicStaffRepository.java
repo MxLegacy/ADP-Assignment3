@@ -16,7 +16,7 @@ public class NonAcademicStaffRepository implements INASRepository {
         NASdb = new HashSet<>();
     }
 
-    public static NonAcademicStaffRepository getRepo(){
+    public static NonAcademicStaffRepository getRepository(){
         if (NASrepo == null){
             NASrepo = new NonAcademicStaffRepository();
         }
@@ -35,7 +35,7 @@ public class NonAcademicStaffRepository implements INASRepository {
     @Override
     public NonAcademicStaff read(String NASname) {
         for (NonAcademicStaff nas : NASdb)
-            if (nas.toString().equals(NASname)) {
+            if (nas.getNASname().equals(NASname)) {
                 return nas;
             }
         return null;
@@ -43,7 +43,7 @@ public class NonAcademicStaffRepository implements INASRepository {
 
     @Override
     public NonAcademicStaff update(NonAcademicStaff nonAcademicStaff) {
-        NonAcademicStaff old = read(nonAcademicStaff.toString());
+        NonAcademicStaff old = read(nonAcademicStaff.getNASname());
         if (old != null) {
              NASdb.remove(old);
              NASdb.add(nonAcademicStaff);
@@ -63,6 +63,6 @@ public class NonAcademicStaffRepository implements INASRepository {
 
     @Override
     public Set<NonAcademicStaff> getAll() {
-        return null;
+        return NASdb;
     }
 }

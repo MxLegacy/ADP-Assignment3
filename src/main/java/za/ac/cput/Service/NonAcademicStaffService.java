@@ -1,16 +1,23 @@
 package za.ac.cput.Service;
 
+/*
+NonAcademicStaffService.java
+Author: Tatum De Wet 218069227
+ */
+
+import org.springframework.stereotype.Service;
 import za.ac.cput.Entity.NonAcademicStaff;
 import za.ac.cput.Repository.NonAcademicStaffRepository;
 
 import java.util.Set;
 
+@Service
 public class NonAcademicStaffService implements INASService{
     private static NonAcademicStaffService NASservice = null;
     private NonAcademicStaffRepository NASrepo;
 
     private NonAcademicStaffService(){
-        this.NASrepo = NonAcademicStaffRepository.getRepo();
+        this.NASrepo = NonAcademicStaffRepository.getRepository();
     }
 
     public static NonAcademicStaffService getService(){

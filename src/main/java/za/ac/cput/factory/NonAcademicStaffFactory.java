@@ -9,9 +9,10 @@ import za.ac.cput.Entity.NonAcademicStaff;
 import za.ac.cput.Util.GenericHelper;
 
 public class NonAcademicStaffFactory{
-    String NASid = GenericHelper.generateID();
 
-    public static NonAcademicStaff createNonAcademicStaff(String NASname, String NASposition, String NASdepartment, String NASid){
+    public static NonAcademicStaff createNonAcademicStaff(String NASname, String NASposition, String NASdepartment){
+
+        String NASid = GenericHelper.generateID();
 
         NonAcademicStaff nonAcademicStaff = new NonAcademicStaff.NASBuilder()
                 .setNASname(NASname).setNASposition(NASposition).setNASdepartment(NASdepartment).setNASid(NASid).build();

@@ -11,7 +11,7 @@ import za.ac.cput.factory.NonAcademicStaffFactory;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class NonAcademicStaffRepositoryTest {
-    NonAcademicStaffRepository NASrepo =  NonAcademicStaffRepository.getRepo();;
+    NonAcademicStaffRepository NASrepo =  NonAcademicStaffRepository.getRepository();;
     NonAcademicStaff nonAcademicStaff =  NonAcademicStaffFactory.createNonAcademicStaff("Greg", "Manager", "Accounting");
 
     @Test
