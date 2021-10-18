@@ -8,6 +8,8 @@ package za.ac.cput.Entity;
 public class NonAcademicStaff{
     private String NASname, NASposition, NASdepartment, NASid;
 
+    private NonAcademicStaff(){}
+
     private NonAcademicStaff(NASBuilder builder) {
         this.NASname = builder.NASname;
         this.NASposition = builder.NASposition;
