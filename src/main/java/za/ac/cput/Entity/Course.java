@@ -9,6 +9,8 @@ package za.ac.cput.Entity;
 public class Course {
     private String courseName, courseSubjectList, courseDepartment;
 
+    private Course(){}
+
     private Course(Builder builder) {
         this.courseName = builder.courseName;
         this.courseSubjectList = builder.courseSubjectList;

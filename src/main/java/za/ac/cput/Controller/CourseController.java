@@ -7,6 +7,7 @@ import za.ac.cput.Service.CourseService;
 import za.ac.cput.factory.CourseFactory;
 
 import java.util.Set;
+
 /*      CourseController.java
         Entity
         Author: Devon Daniels (217299822)
@@ -15,35 +16,39 @@ import java.util.Set;
 @RestController
 @RequestMapping("/course")
 public class CourseController {
-
     @Autowired
     private CourseService courseService;
 
-    //@RequestMapping(value = "/create", method = RequestMethod.POST)
-    @PostMapping("/create")
-    public Course create (@RequestBody Course course){
-        Course newCourse = CourseFactory.buildCourse(course.getCourseName(), course.getCourseSubjectList(), course.getCourseDepartment());
-        return CourseService.getCourseService().create(newCourse);
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    //@PostMapping("/create")
+    public Course create(@RequestBody Course course){
+        Course newCourse = CourseFactory.buildCourse(course.getCourseName(), course.getCourseDepartment(), course.getCourseSubjectList());
+        return courseService.create(newCourse);
+
+
+    }
+    @GetMapping("/read")
+    public Course read(@PathVariable String id){
+        return courseService.read(id);
     }
 
-    @GetMapping("/read/{CourseName")
-    public Course read(Course course){
-        return courseService.read(course.getCourseName());
-    }
 
-    @PostMapping("/delete/{CourseName")
+
+    @PostMapping("/delete")
     public String delete(@RequestBody Course course){
         if (courseService.delete(course.getCourseName()))
-            return "Success";
+            return "Deleted";
         else
-            return "error";
+            return "Request unsuccessful";
     }
 
     @GetMapping("/getall")
-    public Set<Course> getAll() {
+    public Set<Course> getall() {
         return courseService.getAll();
     }
-    }
+}
+
+
 
 
 
