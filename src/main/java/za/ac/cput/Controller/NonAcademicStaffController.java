@@ -1,5 +1,10 @@
 package za.ac.cput.Controller;
 
+/*
+NonAcademicStaffController.java
+Author: Tatum De Wet 218069227
+ */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.Entity.NonAcademicStaff;
@@ -17,8 +22,9 @@ public class NonAcademicStaffController {
     //@RequestMapping(value = "/create", method = RequestMethod.POST)
     @PostMapping("/create")
     public NonAcademicStaff create(@RequestBody NonAcademicStaff nonAcademicStaff){
-        NonAcademicStaff newNAS = NonAcademicStaffFactory.createNonAcademicStaff(nonAcademicStaff.getNASname(), nonAcademicStaff.getNASposition(),
-                nonAcademicStaff.getNASdepartment(), nonAcademicStaff.getNASid());
+        NonAcademicStaff newNAS = NonAcademicStaffFactory.createNonAcademicStaff(nonAcademicStaff.getNASname(),
+                nonAcademicStaff.getNASposition(),
+                nonAcademicStaff.getNASdepartment());
         return nonAcademicStaffService.create(newNAS);
     }
 
