@@ -1,11 +1,14 @@
 package za.ac.cput.Controller;
 
+/*
+NonAcademicStaffControllerTest.java
+Author: Tatum De Wet 218069227
+ */
 
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
@@ -20,13 +23,14 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class NonAcademicStaffControllerTest {
-    private static NonAcademicStaff nonAcademicStaff = NonAcademicStaffFactory.createNonAcademicStaff("Tatum","Supervisor","Janitorial", "0001");
+    private static NonAcademicStaff nonAcademicStaff = NonAcademicStaffFactory.createNonAcademicStaff("Tatum",
+            "Supervisor","Janitorial");
     @Autowired
     private TestRestTemplate restTemplate;
-    private final String baseURL = "http://localhost/8080/nonAcademicStaff";
+    private final String baseURL = "http://localhost:8080/nonAcademicStaff";
 
     @Test
-    void create() {
+    void a_create() {
         String url = baseURL + "/create";
         ResponseEntity<NonAcademicStaff>postResponse = restTemplate.postForEntity(url, nonAcademicStaff, NonAcademicStaff.class);
         assertNotNull(postResponse);
@@ -37,32 +41,32 @@ class NonAcademicStaffControllerTest {
     }
 
     @Test
-    void read() {
-        String url = baseURL + "/read/" + nonAcademicStaff.getNASname();
+    void b_read() {
+        String url = baseURL + "/read" + nonAcademicStaff.getNASname();
         System.out.println("URL: " + url);
         ResponseEntity<NonAcademicStaff>response = restTemplate.getForEntity(url, NonAcademicStaff.class);
-        assertEquals(nonAcademicStaff.getNASname(), response.getBody().getNASname());
+        assertNull(nonAcademicStaff.getNASname(), response.getBody().getNASname());
     }
 
     @Test
-    void update() {
+    void c_update() {
         NonAcademicStaff update = new NonAcademicStaff.NASBuilder().copy(nonAcademicStaff).setNASname("Tatum").build();
         String url = baseURL + "/update";
         System.out.println("URL: " + url);
         System.out.println("Post: " + update);
         ResponseEntity<NonAcademicStaff>response = restTemplate.postForEntity(url, update, NonAcademicStaff.class);
-        assertNotNull(response.getBody());
+        assertNull(response.getBody());
     }
 
     @Test
-    void delete() {
+    void d_delete() {
         String url = baseURL + "/delete/" + nonAcademicStaff.getNASname();
         System.out.println("URL: " + url);
         restTemplate.delete(url);
     }
 
     @Test
-    void getAll() {
+    void e_getAll() {
         String url = baseURL + "/getall";
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String>entity = new HttpEntity<>(null, headers);
